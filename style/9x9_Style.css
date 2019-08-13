@@ -1,0 +1,31 @@
+﻿body {
+    background-color: #FFF0F5;
+}
+
+table {
+    margin: 10px auto;
+    border: 3px red solid;
+    border-collapse: collapse;
+}
+
+tr {
+}
+
+td:nth-child(2n+1) {
+    border-right: 2px green solid;
+    border-left: 2px green solid;
+    border-collapse: collapse;
+    background-color: #E6E6FA;
+}
+
+td:nth-child(2n) {
+    border-right: 2px green solid;
+    border-left: 2px green solid;
+    border-collapse: collapse;
+    background-color: #FFE4E1;
+}
+
+td:hover {
+    background-color: #0026ff;
+    color: red;
+}

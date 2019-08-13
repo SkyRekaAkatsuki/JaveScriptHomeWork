@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html land="zh-hant-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>MSIT12206 JavaScript Web Work</title>
+    <link href="style/MainCSS.css" rel="stylesheet" />
+    <link href="style/Frm.css" rel="stylesheet" />
+</head>
+
+
+
+
+<body>
+    <header style="border:1px solid red;">
+        <h1>
+            <a class="txtdelbomline" style="color:#6d5430;" href="#">MSIT12206 JavaScript Web Work</a>
+        </h1>
+        <br />
+        <p>
+            TEMPLATED by
+            <a href="http://templated.co" rel="nofollow">Here</a>
+        </p>
+
+        <!-------------------------------------------------------------------->
+
+        <div id="menu">
+            <nav>
+                <ul>
+                    <li class="current_page_item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="9x9.html">9x9 Table</a>
+                    </li>
+                    <li>
+                        <a href="Login.html">Login</a>
+                    </li>
+                    <li>
+                        <a href="voting.html">Star</a>
+                    </li>
+                    <li>
+                        <a href="Wallpaper.html">Wallpaper</a>
+                    </li>
+                    <li class="last">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-------------------------------------------------------------------->
+
+        <div id="NetMainImg">
+            <img src="../image/SpriteImg.jpg" Alt="" />
+        </div>
+
+        <!-------------------------------------------------------------------->
+
+        <div class="brlineup"></div>
+        <div class="brlinedown"></div>
+    </header>
+
+    <!-------------------------------------------------------------------->
+
+    <div id="weltitle">
+        <h2 style="text-align:center;font-size:2em;margin-bottom:10px;">
+            <a class="txtdelbomline" href="http://august-soft.com/">Welcome to August Software</a>
+        </h2>
+    </div>
+
+    <!-------------------------------------------------------------------->
+
+    <div id="welcome">
+        <div id="welcome_left">
+            <div id="textboxinput" style="margin:1em auto 0px auto;border:1px solid red">
+                <figure style="border:1px solid red">
+                    <label>
+                        <span class="textboxtextname" style="margin:5px;">姓名: </span><input type="text" name="name" id="idName" size="6" style="width:15em;" placeholder="曾計較" /><span id="idsp_Name" class="textboxprompt_checktip"></span>
+                    </label>
+                    <figcaption class="textboxprompt" style="text-indent:3em">(不可空白/2-5個漢字/僅支持中文)</figcaption>
+                </figure>
+            </div>
+            <br />
+
+            <div id="textboxinput" style="margin:auto;border:1px solid red">
+                <figure style="border:1px solid red">
+                    <label>
+                        <span class="textboxtextname" style="margin:5px;">密碼: </span><input type="text" name="password" id="idPassword" size="6" style="width:15em;" placeholder="Aa123456" /><span id="idsp_Password" class="textboxprompt_checktip"></span>
+                    </label>
+                    <figcaption class="textboxprompt" style="text-indent:3em">(不可空白/至少一個小寫字母與一個大寫字母和一個數字/最少8碼)</figcaption>
+                </figure>
+            </div>
+            <br />
+
+            <div id="textboxinput" style="margin:auto;border:1px solid red">
+                <figure style="border:1px solid red">
+                    <label>
+                        <span class="textboxtextname" style="margin:5px;">日期: </span><input type="text" name="date" id="idDate" size="6" style="width:15em;" placeholder="yyyy/MM/dd" /><span id="idsp_Date" class="textboxprompt_checktip"></span>
+                    </label>
+                    <figcaption class="textboxprompt" style="text-indent:3em">(西元 yyyy/MM/dd)</figcaption>
+                </figure>
+            </div>
+            <br />
+
+            <div id="textboxinput" class="btnstyle" style="margin-bottom:10px;">
+                <input style="width:50px;height:30px" type="button" value="送出" onclick="CheckName(); CheckPassword();CheckDate()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input style="width:50px;height:30px" type="reset" value="清除" onclick="FrmReset()" />
+            </div>
+
+            <script>
+                function FrmReset() {
+                    document.getElementById("idName").value = "";
+                    document.getElementById("idPassword").value = "";
+                    document.getElementById("idDate").value = "";
+                }
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("idName").addEventListener("blur", CheckName)
+                });
+                function CheckName() {
+                    let theNameObj = document.getElementById("idName");
+
+                    let theNameObjVal = theNameObj.value;
+                    let theName = document.getElementById("idName").value;
+                    let theNameLen = theName.length;
+                    let re = new RegExp("^(?!_)(?!.*?_$)[\u4E00-\u9FA5]{2,5}$");
+                    if (theName == "")
+                        //alert("姓名不可空白");
+                    document.getElementById("idsp_Name").innerHTML = "&nbsp;<img src='image/16px/Error.png' style='height:16px'/>此欄不可空白";
+                    else if (re.test(theName))
+                        //alert("姓名格式正確");
+                    document.getElementById("idsp_Name").innerHTML = "&nbsp;<img src='image/16px/correct.jpg' style='height:16px'/>格式正確";
+                    else
+                    //alert("姓名請輸入2-5個漢字");
+                    document.getElementById("idsp_Name").innerHTML = "&nbsp;<img src='image/16px/Error.png' style='height:16px'/>請輸入有效格式";
+                }
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("idPassword").addEventListener("blur", CheckPassword)
+                });
+                function CheckPassword() {
+                    let thePasswordObj = document.getElementById("idPassword");
+                    let thePasswordObjVal = thePasswordObj.valuel;
+                    let thePassword = document.getElementById("idPassword").value;
+                    let thePasswordLen = thePassword.length;
+                    let re = new RegExp("^(?=^.{8,}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$");
+                    if (thePassword == "")
+                        //alert("密碼不可空白");
+                        document.getElementById("idsp_Password").innerHTML = "&nbsp;<img src='image/16px/Error.png' style='height:16px'/>此欄不可空白";
+                    else if (re.test(thePassword))
+                        //alert("密碼格式正確");
+                        document.getElementById("idsp_Password").innerHTML = "&nbsp;<img src='image/16px/correct.jpg' style='height:16px'/>格式正確";
+                    else
+                        //alert("密碼至少要包含一個數字/一個大寫英文/一個小寫英文/至少8碼");
+                        document.getElementById("idsp_Password").innerHTML = "&nbsp;<img src='image/16px/Error.png' style='height:16px'/>請輸入有效格式";
+                }
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("idDate").addEventListener("blur", CheckDate)
+                });
+                function CheckDate() {
+                    let theDateObj = document.getElementById("idDate");
+                    let theDateObjVal = theDateObj.valuel;
+                    let theDate = document.getElementById("idDate").value;
+                    let theDateLen = theDate.length;
+                    let re = new RegExp("^((19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$");
+                    if (theDate == "")
+                        //alert("日期不可空白");
+                        document.getElementById("idsp_Date").innerHTML = "&nbsp;<img src='image/16px/Error.png' style='height:16px'/>此欄不可空白";
+                    else if (re.test(theDate))
+                        //alert("日期格式正確");
+                        document.getElementById("idsp_Date").innerHTML = "&nbsp;<img src='image/16px/correct.jpg' style='height:16px'/>格式正確";
+                    else
+                        //alert("請輸入有效日期/格式:yyyy/MM/dd");
+                        document.getElementById("idsp_Date").innerHTML = "&nbsp;<img src='image/16px/Error.png' style='height:16px'/>請輸入有效格式";
+                    
+                }
+            </script>
+
+            
+        </div>
+        <div id="welcome_right">
+            <figure>
+                <a href="http://august-soft.com/yoake/">
+                    <img class="img" src="image/august/yoake.jpg" alt="夜明け前より瑠璃色な" title="夜明け前より瑠璃色な" />
+                    <figcaption>夜明け前より瑠璃色な</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/fa/">
+                    <img class="img" src="image/august/fa.jpg" alt="FORTUNE ARTERIAL" title="FORTUNE ARTERIAL" />
+                    <figcaption>赤色の約定</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/eustia/main.html">
+                    <img class="img" src="image/august/eustia.jpg" alt="穢翼のユースティア" title="穢翼のユースティア" />
+                    <figcaption>穢翼のユースティア</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/daito/">
+                    <img class="img" src="image/august/daito.jpg" alt="大図書館の羊飼い" title="大図書館の羊飼い" />
+                    <figcaption>大図書館の羊飼 い</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/daito_ds/">
+                    <img class="img" src="image/august/daito_ds.jpg" alt="大図書館の羊飼い -Dreaming Sheep-" title="大図書館の羊飼い -Dreaming Sheep-" />
+                    <figcaption>大図書館の羊飼 い DS</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/hatou/">
+                    <img class="img" src="image/august/hotou.jpg" alt="千の刃濤、桃花染の皇姫" title="千の刃濤、桃花染の皇姫" />
+                    <figcaption>千の刃濤、桃花染の皇姫</figcaption>
+                </a>
+            </figure>
+        </div>
+    </div>
+
+    <!-------------------------------------------------------------------->
+
+    <div class="brlineup"></div>
+    <div class="brlinedown"></div>
+
+    <!-------------------------------------------------------------------->
+
+
+
+
+
+
+</body>
+</html>

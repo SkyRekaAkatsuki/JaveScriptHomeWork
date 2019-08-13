@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html land="zh-hant-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>MSIT12206 JavaScript Web Work</title>
+    <link href="style/MainCSS.css" rel="stylesheet" />
+    <link href="style/Wallpaper.css" rel="stylesheet" />
+
+    <style>
+        .space{
+            height:10px;
+        }
+
+    </style>
+
+    <script>
+
+        let bool_player;
+        let timer;
+        let imgs;
+        let imgsLen;
+        let i = 0;
+        let j;
+        document.addEventListener("DOMContentLoaded", function () {
+            let pc = document.getElementById("pauseandplayer").addEventListener("click", playerclick);
+
+            imgs = document.querySelectorAll("img.imgkongo");
+            imgsLen = imgs.length;
+            for (j = 1; j < imgsLen + 1; j++) {
+                document.getElementById(`Kongo_${j}`).addEventListener("mouseenter", smallenter);
+                document.getElementById(`Kongo_${j}`).addEventListener("mouseleave", smallleave);
+            }
+
+            timer = window.setInterval(changeimg, 100);
+
+        });
+
+
+        function smallenter() {
+            for (j = 1; j < imgsLen + 1; j++) {
+                document.getElementById("idKongo").src = `image/Kongo/${j}.png`;
+                window.clearInterval(timer);
+                if (j == imgsLen) break;
+            }
+        }
+
+
+
+        function smallleave() {
+            for (j = 1; j < imgsLen + 1; j++) {
+                document.getElementById("idKongo").src = `image/Kongo/${j}.png`;
+                if (j == imgsLen) {
+                timer = window.setInterval(changeimg, 100);
+
+                }
+                
+}
+            }
+        
+
+        function changeimg() {
+            if (i == 8) i = 0;
+            i++;
+            document.getElementById("idKongo").src = `image/Kongo/${i}.png`;
+        }
+        let bool_pck = true;
+        function playerclick() {
+            if (bool_pck) {
+                bool_pck = false;
+                window.clearInterval(timer);
+                document.getElementById("pauseandplayer").src = "image/normal/player.png";
+            }
+            else {
+                bool_pck = true;
+                timer = window.setInterval(changeimg, 100);
+                document.getElementById("pauseandplayer").src = "image/normal/pause.png";
+            }
+        }
+
+            
+
+    </script>
+</head>
+
+
+
+
+<body>
+    <header style="border:1px solid red;">
+        <h1>
+            <a class="txtdelbomline" style="color:#6d5430;" href="#">MSIT12206 JavaScript Web Work</a>
+        </h1>
+        <br />
+        <p>
+            TEMPLATED by
+            <a href="http://templated.co" rel="nofollow">Here</a>
+        </p>
+
+
+        <!-------------------------------------------------------------------->
+
+        <div id="menu">
+            <nav>
+                <ul>
+                    <li class="current_page_item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="9x9.html">9x9 Table</a>
+                    </li>
+                    <li>
+                        <a href="Login.html">Login</a>
+                    </li>
+                    <li>
+                        <a href="voting.html">Star</a>
+                    </li>
+                    <li>
+                        <a href="Wallpaper.html">Wallpaper</a>
+                    </li>
+                    <li class="last">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!-------------------------------------------------------------------->
+
+        <div id="NetMainImg">
+            <img src="image/SpriteImg.jpg" Alt="" />
+        </div>
+
+        <!-------------------------------------------------------------------->
+
+        <div class="brlineup"></div>
+        <div class="brlinedown"></div>
+    </header>
+    <!-------------------------------------------------------------------->
+
+    <div id="weltitle">
+        <h2 style="text-align:center;font-size:2em;margin-bottom:10px;">
+            <a class="txtdelbomline" href="http://august-soft.com/">Welcome to August Software</a>
+        </h2>
+    </div>
+
+    <!-------------------------------------------------------------------->
+
+    <div id="welcome" style="width:1250px;">
+        <div id="welcome_left">
+            <div id="Wallpaper_list">
+                <ul>
+                    <li>
+                        <img src="image/Kongo/1.png" id="Kongo_1" class="imgkongo" />
+                    </li>
+                    <li class="space"></li>
+                    <li>
+                        <img src="image/Kongo/2.png" id="Kongo_2" class="imgkongo" />
+                    </li>
+                    <li class="space"></li>
+                    <li>
+                        <img src="image/Kongo/3.png" id="Kongo_3" class="imgkongo" />
+                    </li>
+                    <li class="space"></li>
+                    <li>
+                        <img src="image/Kongo/4.png" id="Kongo_4" class="imgkongo" />
+                    </li>
+                    <li class="space"></li>
+                    <li>
+                        <img src="image/Kongo/5.png" id="Kongo_5" class="imgkongo" />
+                    </li>
+                    <li class="space"></li>
+                    <li>
+                        <img src="image/Kongo/6.png" id="Kongo_6" class="imgkongo" />
+                    </li>
+                    <li class="space"></li>
+                    <li>
+                        <img src="image/Kongo/7.png" id="Kongo_7" class="imgkongo" />
+                    </li>
+                    <li class="space"></li>
+                    <li>
+                        <img src="image/Kongo/8.png" id="Kongo_8" class="imgkongo" />
+                    </li>
+                </ul>
+            </div>
+
+            <div style="float:right;margin:20px 35px 50px 0px;border:5px solid #ffffff;padding:2px">
+                <!---JS--->
+                <img id="idKongo" src="image/Kongo/1.png" />
+            </div>
+
+            <div id="playercolumn">
+                <ul style="border: 1px solid red;">
+                    <li>
+                        <img src="image/normal/arrow _left.png" />
+                    </li>
+                    <li>
+                        <img src="image/normal/pause.png" id="pauseandplayer" />
+                    </li>
+                    <li>
+                        <img src="image/normal/arrow_right.png" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="welcome_right">
+            <figure>
+                <a href="http://august-soft.com/yoake/">
+                    <img class="img" src="image/august/yoake.jpg" alt="夜明け前より瑠璃色な" title="夜明け前より瑠璃色な" />
+                    <figcaption>夜明け前より瑠璃色な</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/fa/">
+                    <img class="img" src="image/august/fa.jpg" alt="FORTUNE ARTERIAL" title="FORTUNE ARTERIAL" />
+                    <figcaption>赤色の約定</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/eustia/main.html">
+                    <img class="img" src="image/august/eustia.jpg" alt="穢翼のユースティア" title="穢翼のユースティア" />
+                    <figcaption>穢翼のユースティア</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/daito/">
+                    <img class="img" src="image/august/daito.jpg" alt="大図書館の羊飼い" title="大図書館の羊飼い" />
+                    <figcaption>大図書館の羊飼 い</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/daito_ds/">
+                    <img class="img" src="image/august/daito_ds.jpg" alt="大図書館の羊飼い -Dreaming Sheep-" title="大図書館の羊飼い -Dreaming Sheep-" />
+                    <figcaption>大図書館の羊飼 い DS</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="http://august-soft.com/hatou/">
+                    <img class="img" src="image/august/hotou.jpg" alt="千の刃濤、桃花染の皇姫" title="千の刃濤、桃花染の皇姫" />
+                    <figcaption>千の刃濤、桃花染の皇姫</figcaption>
+                </a>
+            </figure>
+        </div>
+    </div>
+
+    <!-------------------------------------------------------------------->
+
+    <div class="brlineup"></div>
+    <div class="brlinedown"></div>
+
+    <!-------------------------------------------------------------------->
+
+</body>
+</html>

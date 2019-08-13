@@ -1,0 +1,16 @@
+﻿.star_score{
+    text-align:center;
+    /*display:inline-block;*/
+    /*margin:0.5em auto 0.5em auto;*/
+    margin:0em auto 1em auto;
+
+    
+}
+
+.star_img_site {
+    border: 5px solid #ff6a00;
+    /*display: inline-block;*/
+    margin:1em;
+    text-align:center;
+ 
+}

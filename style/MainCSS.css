@@ -1,0 +1,143 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../image/main-bg2.jpg);
+    background-repeat: repeat;
+    background-color: #FDE3BE;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    /*width: 65.104166666666666666666666666667%;*/
+    margin: 0px auto 0px auto;
+    border: 1px solid red;
+    overflow: auto;
+    width: 1250px;
+}
+
+    body header {
+        text-align: center;
+        padding: 15px 0px 15px 0px;
+    }
+
+.txtdelbomline {
+    text-decoration: none;
+}
+
+.brlineup {
+    border-bottom: 3px dashed #987b57;
+    margin: 8px auto 2.5px auto;
+}
+
+.brlinedown {
+    border-bottom: 3px dashed #987b57;
+    margin: 2.5px auto 8px auto;
+}
+
+.brstyle {
+    margin: 1px auto 1px auto;
+}
+
+
+body header #NetMainImg {
+    margin: 0px auto;
+    border: 1px solid red;
+    overflow: hidden;
+    height: 125px;
+}
+
+body #welcome {
+    text-align: center;
+    text-decoration: none;
+}
+
+body #menu {
+    overflow: auto;
+    padding: 0px 0px;
+    margin: 0px auto 0px auto;
+    background: #6d5430;
+    /*border-radius: 0px 0px 20px 20px;*/
+    font-size: 20px;
+    color: #000000;
+    width: 100%;
+}
+
+    body #menu nav ul {
+        list-style: none;
+        line-height: 50px;
+        text-align: center;
+    }
+
+        body #menu nav ul li {
+            display: inline-block; /*XXXX*/
+        }
+
+            body #menu nav ul li a {
+                text-align: center;
+                /*display: block;*/
+                text-decoration: none;
+                text-transform: capitalize;
+                padding: 0px 45px 0px 45px;
+                border: 1px solid red;
+                color: #FEEAC5;
+                font-size: 30px;
+            }
+
+body #welcome {
+    overflow: hidden;
+    border: 1px solid red;
+    text-align: left;
+    margin: 0px auto 0px auto;
+    padding: 10px 0px 10px 0px;
+}
+
+    body #welcome #welcome_left {
+        width: 57%;
+        float: left;
+        border: 5px solid blue;
+    }
+
+
+        body #welcome #welcome_left ul {
+            padding-left: 2em;
+            padding: 10px;
+        }
+
+    body #welcome #welcome_right {
+        width: 500px;
+        float: right;
+        border: 5px solid blue;
+    }
+
+        body #welcome #welcome_right figure {
+            border: 5px solid #ff6a00;
+            display: inline-block;
+            text-align: center;
+            margin: 0.4em;
+            
+        }
+
+            body #welcome #welcome_right figure .img {
+                width: 220px;
+                height: 145px;
+            }
+
+            body #welcome #welcome_right figure figcaption {
+                text-align: center;
+                margin: 5px;
+                font-family: 'MS PGothic', sans-serif;
+                font-weight: 700;
+                color: #8d137f;
+            }
+
+    body #welcome #welcome_left ul li {
+    }
+
+body #article {
+}
+
+.post .entry {
+    /*padding: 0px 0px 20px 0px;
+    text-align: justify;*/
+}
